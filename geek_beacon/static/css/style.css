@@ -1,0 +1,115 @@
+body {
+	background: url(../images/background_improved.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center -50px;
+	background-attachment: fixed;
+
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 1/2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+	body {
+		background: url('../images/bg@2x.png') no-repeat cover;
+		background-position: center -50px;
+	}
+}
+
+.body-wrap {
+	width: 100%;
+}
+.iframe-container{
+    height:850px;
+		z-index:9999;
+}
+.inner {
+	margin: 1em auto;
+	width: 100%;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	width: 140px;
+	height: auto;
+}
+
+
+iframe.gaming {
+	margin: 0 21.5%;
+	display: block;
+	border: 3px solid black;
+	position: absolute;
+	width: 57%;
+	height: calc(100% - 316px);
+	top: 308px;
+}
+
+
+img.sel {
+	margin: 0 10px;
+}
+
+iframe {
+	margin: 2.5% 2.5%;
+	display: block;
+	border: 3px solid black;
+	position: absolute;
+	width: 90%;
+	height: calc(100% - 316px);
+	top: 308px;
+    height:575px;
+}
+
+a {
+	display: inline-block;
+	-webkit-box-shadow: 0 0 5px 4px rgba(0, 255, 255, 0.61);
+	-moz-box-shadow: 0 0 5px 4px rgba(0, 255, 255, 0.61);
+	box-shadow: 0 0 5px 4px rgba(0, 255, 255, 0.61);
+	margin: 5px 10px;
+}
+
+a:hover {
+	-webkit-box-shadow: 0 0 5px 4px rgba(255, 255, 255, 0.81);
+	-moz-box-shadow: 0 0 5px 4px rgba(255, 255, 255, 0.81);
+	box-shadow: 0 0 5px 4px rgba(255, 255, 255, 0.81);
+}
+
+.b1 {}
+
+.b2 {}
+
+.b3 {}
+
+.b4 {}
+
+.b5 {}
+
+.b6 {}
+
+footer {
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	padding: 20px 15px;
+	margin: 0;
+
+	text-shadow: 0 0 7px rgba(0, 0, 0, 1);
+	background: rgba(0,0,0,0.7);
+
+	text-align: center;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+footer div {
+	padding: 0 0 20px 0;
+}
+
+footer img {
+	height: 50px;
+}
