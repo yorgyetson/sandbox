@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^gaming/$', TemplateView.as_view(template_name='pages/gaming.html'), name='about'),
     url(r'^geeksabroad/$', TemplateView.as_view(template_name='pages/geeksabroad.html'), name='about'),
     url(r'^squirrels/$', TemplateView.as_view(template_name='pages/squirrels.html'), name='about'),
