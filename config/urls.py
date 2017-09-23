@@ -7,12 +7,11 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
-    url(r'^gaming/$', TemplateView.as_view(template_name='pages/gaming.html'), name='about'),
-    url(r'^geeksabroad/$', TemplateView.as_view(template_name='pages/geeksabroad.html'), name='about'),
-    url(r'^squirrels/$', TemplateView.as_view(template_name='pages/squirrels.html'), name='about'),
-    url(r'^stream/$', TemplateView.as_view(template_name='pages/stream.html'), name='about'),
-    url(r'^survey/$', TemplateView.as_view(template_name='pages/survey.html'), name='about'),
-    url(r'^content/$', TemplateView.as_view(template_name='pages/content/content_base.html'), name='about'),
+    url(r'^gaming/$', TemplateView.as_view(template_name='pages/gaming.html'), name='gaming'),
+    url(r'^geeksabroad/$', TemplateView.as_view(template_name='pages/geeksabroad.html'), name='geeksabroad'),
+    url(r'^squirrels/$', TemplateView.as_view(template_name='pages/squirrels.html'), name='squirrels'),
+    url(r'^stream/$', TemplateView.as_view(template_name='pages/stream.html'), name='stream'),
+    url(r'^survey/$', TemplateView.as_view(template_name='pages/survey.html'), name='survey'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
@@ -22,6 +21,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
+    url(r'^content/', include('content.urls', namespace='content')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

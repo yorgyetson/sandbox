@@ -14,10 +14,11 @@
 
               <!-- page-title start -->
               <!-- ================ -->
-              <h1 class="page-title">Blog Right Sidebar</h1>
+              <h1 class="page-title">{{ title }}</h1>
               <div class="separator-2"></div>
               <!-- page-title end -->
 
+              {% for post in posts %}
               <!-- blogpost start -->
               <article class="blogpost">
                 <div class="row grid-space-10">
@@ -77,6 +78,7 @@
                 </footer>
               </article>
               <!-- blogpost end -->
+              {% endfor %}
 
               <!-- blogpost start -->
               <article class="blogpost">
