@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^squirrels/$', TemplateView.as_view(template_name='pages/squirrels.html'), name='about'),
     url(r'^stream/$', TemplateView.as_view(template_name='pages/stream.html'), name='about'),
     url(r'^survey/$', TemplateView.as_view(template_name='pages/survey.html'), name='about'),
+    url(r'^content/$', TemplateView.as_view(template_name='pages/content/content_base.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

@@ -61,6 +61,7 @@
 
   </head>
 
+
   <!-- body classes:  -->
   <!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
   <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
@@ -614,7 +615,7 @@
         </div>
       </div>
       <!-- banner end -->
-
+      {% block content %}
       <div id="page-start"></div>
 
       <!-- section start -->
@@ -1203,4 +1204,5 @@
     <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 
   </body>
+  {% endblock content %}
 </html>
