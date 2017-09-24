@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from content.models import Post, ContentTag
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class ContentDisplay(View):
     """Single post default view"""
@@ -19,11 +20,24 @@ class ContentDisplayList(View):
 
     def get(self, request, tag=None):
         if tag:
-            posts = Post.objects.filter(tags__name=tag).order_by('updated_at')[:5]
+            posts = Post.objects.filter(tags__name=tag).order_by('updated_at')
             title = tag
         else:
-            posts = Post.objects.all().order_by('updated_at')[:5]
+            posts = Post.objects.all().order_by('updated_at')
             title = "Recent Posts"
+
+        paginator = Paginator(posts, 5) # Show 5 posts per page
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            posts = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            posts = paginator.page(paginator.num_pages)
+
+
 
         latest = Post.objects.all().order_by('updated_at')[:5]
         tags = ContentTag.objects.all()
