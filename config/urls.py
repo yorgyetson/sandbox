@@ -22,6 +22,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'^content/', include('content.urls', namespace='content')),
+    url(r'^credits/$', TemplateView.as_view(template_name='pages/credits.html'), name='credits'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
