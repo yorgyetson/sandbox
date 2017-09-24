@@ -24,7 +24,7 @@
                   <div class="post-info mb-4">
                     <span class="post-date">
                       <i class="icon-calendar"></i>
-                      {{ post.updated_at }}
+                      {{ post.updated_at|date:"M d, Y" }}
                     </span>
                     <span class="submitted"><i class="icon-user-1"></i> by <a href="#">{{ post.author }}</a></span>
                     <!--<span class="comments"><i class="icon-chat"></i> <a href="#">22 comments</a></span>-->
@@ -122,7 +122,7 @@
                     </div>
                     <div class="media-body">
                       <h6 class="media-heading"><a href="/content/display/{{ item.id }}">{{ item.title|safe }}</a></h6>
-                      <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>{{ item.updated_at }}</p>
+                      <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>{{ item.updated_at|date:"M d, Y" }}</p>
                     </div>
                   </div>
                   <hr>
