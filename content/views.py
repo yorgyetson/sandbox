@@ -1,16 +1,20 @@
 from django.shortcuts import render
 from django.views import View
-from content.models import Post
+from content.models import Post, ContentTag
 
 class ContentDisplay(View):
     """Single post default view"""
 
     def get(self, request, content_id=None):
         post = Post.objects.get(pk=content_id)
+        latest = Post.objects.all().order_by('updated_at')[:5]
+        tags = ContentTag.objects.all()
         title = "Single Content Display"
         return render(request, "pages/content/content_post.html",
                                                             {"title" : title,
-                                                            "post" : post,})
+                                                            "post" : post,
+                                                            "latest" : latest,
+                                                            "tags" : tags,})
 
 class ContentDisplayList(View):
     """List recent posts of tag type (default all tags)"""
@@ -22,7 +26,12 @@ class ContentDisplayList(View):
         else:
             posts = Post.objects.all().order_by('updated_at')[:5]
             title = "Recent Posts"
+            
+        latest = Post.objects.all().order_by('updated_at')[:5]
+        tags = ContentTag.objects.all()
 
         return render(request, "pages/content/content_base.html",
                                                             {"title" : title,
-                                                            "posts" : posts,})
+                                                            "posts" : posts,
+                                                            "latest" : latest,
+                                                            "tags" : tags})
