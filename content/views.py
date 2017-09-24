@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from content.models import Post
 
 class ContentDisplay(View):
 
@@ -14,9 +15,8 @@ class ContentDisplay(View):
 class ContentDisplayList(View):
 
     def get(self, request, tag=None):
-        #posts = Posts.objects.all().order_by('start_date')[:5]
-        posts = [1,2,3]
-        title = "Display Content List"
+        posts = Post.objects.all().order_by('updated_at')[:5]
+        title = "I don't know what to put here"
         return render(request, "pages/content/content_base.html",
                                                             {"title" : title,
                                                             "posts" : posts,})

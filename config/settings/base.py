@@ -58,6 +58,7 @@ LOCAL_APPS = [
     # custom users app
     'geek_beacon.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'tinymce',
     'content',
 ]
 
