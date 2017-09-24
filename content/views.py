@@ -10,10 +10,9 @@ class ContentDisplay(View):
         latest = Post.objects.all().order_by('updated_at')[:5]
         tags = ContentTag.objects.all()
         return render(request, "pages/content/content_post.html",
-                                                            {"title" : title,
-                                                            "post" : post,
-                                                            "latest" : latest,
-                                                            "tags" : tags,})
+                                                            {"post" : post,
+                                                             "latest" : latest,
+                                                             "tags" : tags,})
 
 class ContentDisplayList(View):
     """List recent posts of tag type (default all tags)"""
