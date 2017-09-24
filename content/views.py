@@ -6,12 +6,11 @@ class ContentDisplay(View):
     """Single post default view"""
 
     def get(self, request, content_id=None):
-        post = Posts.objects.get(pk=content_id)
-        post = [1]
+        post = Post.objects.get(pk=content_id)
         title = "Single Content Display"
-        return render(request, "pages/content/content_base.html",
+        return render(request, "pages/content/content_post.html",
                                                             {"title" : title,
-                                                            "posts" : posts,})
+                                                            "post" : post,})
 
 class ContentDisplayList(View):
     """List recent posts of tag type (default all tags)"""

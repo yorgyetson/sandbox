@@ -5478,7 +5478,7 @@ fieldset[disabled] .form-control {
 
 .header .navbar-nav .dropdown-toggle::after {
   font-family: 'FontAwesome';
-  content: "\f107";
+
   position: absolute;
   top: 51%;
   left: auto;
